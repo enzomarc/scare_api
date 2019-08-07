@@ -15,15 +15,17 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return response()->json('API is alive.');
+	return response()->json('API is alive.');
 });
 
 Route::group(['prefix' => 'api', 'middleware' => 'auth'], function () {
 
-    Route::get('clinics', 'ClinicController@all');
-
-    Route::get('something', function () {
-    	return response()->json('Something is still alive too.');
-    });
+	// Clinic routes
+    Route::get('clinic', 'ClinicController@index');
+    Route::get('clinic/{clinic}', 'ClinicController@show');
+    Route::post('clinic', 'ClinicController@store');
+    Route::put('clinic/{clinic}', 'ClinicController@update');
+    Route::delete('clinic/{clinic}', 'ClinicController@destroy');
+    Route::get('clinic/{clinic}/toggle', 'ClinicController@toggle');
 
 });
