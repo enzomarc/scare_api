@@ -27,7 +27,7 @@ class AuthMiddleware
 
 		try {
 			$client = new Client();
-			$response = $client->get('http://127.0.0.1:3000/api/validate/' . $token);
+			$response = $client->get('http://127.0.0.1:8000/api/validate/' . $token);
 
 			if ($response->getStatusCode() != 200)
 				return response()->json($response->getBody(), $response->getStatusCode());
