@@ -22,7 +22,7 @@ class ClinicController extends Controller
 	/**
 	 * Get the requested clinic.
 	 *
-	 * @param Clinic $clinic
+	 * @param int $clinic
 	 * @return \Illuminate\Http\JsonResponse
 	 */
 	public function show(int $clinic)
@@ -79,7 +79,7 @@ class ClinicController extends Controller
 	 * Update the given clinic.
 	 *
 	 * @param Request $request
-	 * @param Clinic $clinic
+	 * @param int $clinic
 	 * @return \Illuminate\Http\JsonResponse
 	 */
 	public function update(Request $request, int $clinic)
@@ -100,7 +100,7 @@ class ClinicController extends Controller
 	/**
 	 * Delete the given clinic.
 	 *
-	 * @param Clinic $clinic
+	 * @param int $clinic
 	 * @return \Illuminate\Http\JsonResponse
 	 */
 	public function destroy(int $clinic)
