@@ -28,4 +28,12 @@ Route::group(['prefix' => 'api', 'middleware' => 'auth'], function () {
     Route::delete('clinic/{clinic}', 'ClinicController@destroy');
     Route::get('clinic/{clinic}/toggle', 'ClinicController@toggle');
 
+    // User routes
+	Route::get('users', 'UserController@index');
+	Route::get('users/{user}', 'UserController@show');
+	Route::post('users', 'UserController@store');
+	Route::put('users/{user}', 'UserController@update');
+	Route::delete('users/{user}', 'UserController@destroy');
+	Route::get('users/{user}/toggle', 'UserController@toggle');
+	
 });
